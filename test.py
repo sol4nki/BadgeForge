@@ -41,8 +41,9 @@ async def on_message(msg):
 
 @bot.command()
 async def ping(ctx):
-    await ctx.send(f"pong ")
-    
+    await ctx.send(f"pong {round(bot.latency * 1000)}ms")
 
+#todo - save the attachments temporarily and only save if less than 8mb 
+# and delete after 3mins(or wtv depending on time) 
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)
 

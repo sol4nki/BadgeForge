@@ -12,45 +12,6 @@ banner_size = (280, 120)
 banner = Image.new("RGBA",banner_size, (0, 0, 0, 0))
 d = ImageDraw.Draw(banner)
 
-
-# drawing the main body
-# todo- add the color option and smart color picker from logo or some image
-d.rounded_rectangle(
-    [(0, 0), banner_size],
-    radius=banner_size[1]//20,
-    fill=(200, 200, 200),
-    outline=None         
-)
-
-
-# drawing the lines
-d.rounded_rectangle(
-    [(11, 11), (banner_size[0]-11, banner_size[1]-11)],
-    radius=banner_size[1]//24,
-    outline=(0,0,0),
-    width=banner_size[1]//120
-)
-
-d.rounded_rectangle(
-    [(10, 10), (banner_size[0]-10, banner_size[1]-10)],
-    radius=banner_size[1]//24,
-    outline=(255,255,255),
-    width=banner_size[1]//120
-)
-
-d.rounded_rectangle(
-    [(9, 9), (banner_size[0]-9, banner_size[1]-9)],
-    radius=banner_size[1]//24,
-    outline=(0,0,0),
-    width=banner_size[1]//120
-)
-
-
-# pasting the logo
-im = ImageOps.fit(im, crop_size)
-
-banner.paste(im, (20,20))
-
 COLORS = {
     # metallics
     "gold":          (255, 215, 0),
@@ -113,6 +74,45 @@ COLORS = {
 }
 
 
+# drawing the main body
+# todo- add the color option and smart color picker from logo or some image
+d.rounded_rectangle(
+    [(0, 0), banner_size],
+    radius=banner_size[1]//20,
+    fill=COLORS["bronze"],
+    outline=None         
+)
+
+
+# drawing the lines
+# todo- border color change!!
+d.rounded_rectangle(
+    [(11, 11), (banner_size[0]-11, banner_size[1]-11)],
+    radius=banner_size[1]//24,
+    outline=(0,0,0),
+    width=banner_size[1]//120
+)
+d.rounded_rectangle(
+    [(10, 10), (banner_size[0]-10, banner_size[1]-10)],
+    radius=banner_size[1]//24,
+    outline=(255,255,255),
+    width=banner_size[1]//120
+)
+d.rounded_rectangle(
+    [(9, 9), (banner_size[0]-9, banner_size[1]-9)],
+    radius=banner_size[1]//24,
+    outline=(0,0,0),
+    width=banner_size[1]//120
+)
+
+
+# pasting the logo
+im = ImageOps.fit(im, crop_size)
+
+banner.paste(im, (20,20))
+
+
+
 # writing the text and description
 # todo- add more fonts and options!
 font_title = ImageFont.truetype("./font/Bitcount.ttf", 20)
@@ -158,5 +158,5 @@ d.text((120, 90), ">>> $username", font=font_desc)
 pad = 10
 im_padded = ImageOps.expand(banner, border=pad, fill=(0,0,0,0))
 
-# im_padded.show()
+im_padded.show()
 # im_padded.save("padded.png")
