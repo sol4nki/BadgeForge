@@ -51,6 +51,67 @@ im = ImageOps.fit(im, crop_size)
 
 banner.paste(im, (20,20))
 
+COLORS = {
+    # metallics
+    "gold":          (255, 215, 0),
+    "silver":        (192, 192, 192),
+    "bronze":        (205, 127, 50),
+    "platinum":      (229, 228, 226),
+    "rose_gold":     (183, 110, 121),
+
+    # grayscale
+    "white":         (255, 255, 255),
+    "black":         (0, 0, 0),
+    "light_gray":    (211, 211, 211),
+    "gray":          (128, 128, 128),
+    "dark_gray":     (64, 64, 64),
+
+    # reds
+    "red":           (255, 0, 0),
+    "dark_red":      (139, 0, 0),
+    "rose":          (255, 102, 102),
+    "crimson":       (220, 20, 60),
+
+    # oranges + yellows
+    "orange":        (255, 165, 0),
+    "dark_orange":   (255, 140, 0),
+    "yellow":        (255, 255, 0),
+    "amber":         (255, 191, 0),
+
+    # greens
+    "green":         (0, 128, 0),
+    "light_green":   (144, 238, 144),
+    "lime":          (50, 205, 50),
+    "mint":          (152, 255, 152),
+    "emerald":       (80, 200, 120),
+
+    # blues
+    "blue":          (0, 0, 255),
+    "sky_blue":      (135, 206, 235),
+    "navy":          (0, 0, 128),
+    "cyan":          (0, 255, 255),
+    "teal":          (0, 128, 128),
+
+    # purples
+    "purple":        (128, 0, 128),
+    "lavender":      (230, 230, 250),
+    "violet":        (238, 130, 238),
+    "magenta":       (255, 0, 255),
+
+    # browns / earthy
+    "brown":         (150, 75, 0),
+    "tan":           (210, 180, 140),
+    "sand":          (194, 178, 128),
+
+    # specialty / aesthetic colors
+    "pastel_pink":   (255, 182, 193),
+    "pastel_blue":   (174, 198, 255),
+    "pastel_green":  (119, 221, 119),
+    "neon_green":    (57, 255, 20),
+    "neon_pink":     (255, 20, 147),
+    "neon_blue":     (0, 160, 255)
+}
+
 
 # writing the text and description
 # todo- add more fonts and options!
@@ -97,5 +158,5 @@ d.text((120, 90), ">>> $username", font=font_desc)
 pad = 10
 im_padded = ImageOps.expand(banner, border=pad, fill=(0,0,0,0))
 
-im_padded.show()
-im_padded.save("padded.png")
+# im_padded.show()
+# im_padded.save("padded.png")
